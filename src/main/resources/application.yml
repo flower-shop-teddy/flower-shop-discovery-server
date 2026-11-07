@@ -1,0 +1,20 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: discovery-server
+
+eureka:
+  client:
+    register-with-eureka: false   # server không tự đăng ký chính nó
+    fetch-registry: false
+  server:
+    # Chỉ tắt ở LOCAL vì bật/tắt service liên tục. UAT/PROD phải để true.
+    enable-self-preservation: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
